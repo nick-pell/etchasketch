@@ -3,19 +3,29 @@ body{
     padding: 0;
 }
 
+.title{
+    text-align: center;
+}
+
 .grid{
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
+    margin-top: 50px;   
+
 
 }
 
 .box{
-    border:1px solid blue;
-    width: 20px;
-    height: 20px;
+    border:1px solid black;
+    width: 30px;
+    height: 30px;
 }
 
 .row{
     display: flex;
     justify-content: center;
+}
+
+.colored{
+    background-color: blue;
 }

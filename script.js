@@ -18,4 +18,14 @@ for(let i = 0; i < gridHeight; i++){
 
 }
 
+
 drawGrid(gridWidth,gridHeight);
+
+const boxes = document.querySelectorAll('.box');
+
+boxes.forEach((box) => {
+    box.addEventListener('mouseover',() => {
+        box.classList.add('colored');
+
+    });
+});
