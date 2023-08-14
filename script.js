@@ -1,5 +1,8 @@
 let gridWidth = 16;
 let gridHeight = 16;
+let userInput = 0;
+let selectedColor = 'blue';
+
 
 const grid = document.querySelector('.grid');
 
@@ -16,16 +19,30 @@ for(let i = 0; i < gridHeight; i++){
     }
 }
 
+const boxes = document.querySelectorAll('.box');
+
+boxes.forEach((box) => {
+    box.addEventListener('mouseover',() => {
+        box.style.backgroundColor = selectedColor;
+
+    });
+});
+
 }
 
 
 drawGrid(gridWidth,gridHeight);
 
-const boxes = document.querySelectorAll('.box');
 
-boxes.forEach((box) => {
-    box.addEventListener('mouseover',() => {
-        box.classList.add('colored');
-
-    });
+const sizeButton = document.querySelector('.size-button');
+sizeButton.addEventListener('click', () => { 
+        const div = document.getElementById("grid");
+        div.replaceChildren();
+        userInput = prompt('Enter grid size');
+        while(userInput >= 100){
+            userInput = prompt('Max size is 100. Re-enter Size');
+        }
+        drawGrid(userInput,userInput);
+        
 });
+
